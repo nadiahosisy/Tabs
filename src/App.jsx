@@ -6,7 +6,11 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
 
-  const fechJobs = async () => {};
+  const fechJobs = async () => {
+    const response = await fetch(url);
+    const newJobs = await response.json();
+    setIsLoading(false);
+  };
   useEffect(() => {}, []);
   return <h2>Tabs Starter</h2>;
 };
